@@ -1,16 +1,22 @@
+'use client'
+
 import { useState, useEffect } from "react";
 
 export default function Home() {
 
   const styles = {
     background: "bg-blue-300 h-screen w-screen",
-    title: "text-center text-5xl text-white pt-20 pb-12",
-    container: "bg-white mx-80 p-12 rounded-lg ",
-    questionContainer: "flex flex-col justify-center mb-12 ",
-    questionText: "text-2xl text-center mb-2",
-    input: "px-4 py-2 rounded-lg border-none bg-gray-200 mx-80",
-    radioContainer: "mb-12 flex flex-col justify-center items-center",
-    radio: "mx-6 my-2",
+    title: "text-center text-3xl text-white py-8 mx-8",
+
+    container: "bg-white mx-12 p-6 rounded-lg ",
+    questionContainer: "flex flex-col justify-center mb-6 ",
+    questionText: "text-lg text-center mb-3 ",
+    input: "m-auto px-4 py-2 rounded-lg border-none bg-gray-200 text-center w-9/12",
+    answer: 'text-right mr-8 my-4 text-lg font-bold',
+    dropdownContainer: "flex flex-col justify-center items-center",
+    dropdownMenu: 'px-4 py-2 rounded-lg mb-8',
+    totalText: 'text-xl font-bold',
+    totalAnswer: 'text-center font-bold text-xl mt-2',
   };
 
   // Before you have any change of adding branching in your code, initialise your effects
@@ -57,8 +63,9 @@ export default function Home() {
         <h1 className={styles.title}>Childcare Calculator</h1>
 
         <div className={styles.container}>
+
           <div className={styles.questionContainer}>
-            <h2 className={styles.questionText}> Enter the child's age</h2>
+            <h2 className={styles.questionText}>Enter the child's age</h2>
             <input
               id="childAge"
               type="number"
@@ -66,18 +73,17 @@ export default function Home() {
               value={childAge}
               onChange={handleAge}
               className={styles.input}
-            />{" "}
-            {childAge}
+            />
+            <div className={styles.answer}>{childAge}</div>
           </div>
 
-          <div className={styles.radioContainer}>
+          <div className={styles.dropdownContainer}>
             <h2 className={styles.questionText}> Select funding options</h2>
-
-            <div className="mb-4">
-              <select onChange={handleFunding}>
-                <option value="fundingOne">Funding One</option>
-                <option value="fundingTwo">Funding Two</option>
-                <option value="fundingThree">Funding Three</option>
+            <div className={styles.questionContainer}>
+              <select onChange={handleFunding} className={styles.dropdownMenu}>
+                <option value="fundingOne">2yrs 15hrs</option>
+                <option value="fundingTwo">3yrs 15hrs</option>
+                <option value="fundingThree">3yrs 30hrs</option>
               </select>
               {funding}
             </div>
@@ -91,19 +97,20 @@ export default function Home() {
                 value={hours}
                 onChange={handleHours}
                 className={styles.input}
-              />{" "}
-              {hours}
+              />
+              <div className={styles.answer}>{hours}</div>
             </div>
 
             <div className={styles.questionContainer}>
-              <h2 className={styles.questionText}> Total charge per week</h2>
+              <h2 className={styles.totalText}> Total charge per week</h2>
               <div>
-                <h3>£</h3>
+                <h3 className={styles.totalAnswer}>{`£`}</h3>
               </div>
             </div>
+
           </div>
-        </div>
-      </div>
+        </div >
+      </div >
 
     </>
   )

@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 export default function Home() {
 
   const styles = {
-    background: "bg-blue-300 h-full w-screen",
-    title: "text-center text-3xl text-white py-4 mx-4 font-bold",
+    background: "bg-blue-300 h-screen w-screen",
+    title: "text-center text-4xl text-white py-6 mx-4 font-bold",
 
     container: "bg-white mx-6 mb-6 p-6 rounded-lg ",
     questionContainer: "flex flex-col justify-center mb-6 shadow-md",
-    questionText: "text-lg text-center mb-3 font-bold tracking-wider",
+    questionText: "text-md text-center mb-3 font-bold tracking-wider",
     input: "m-auto px-4 py-2 rounded-lg border-none bg-gray-200 text-center w-5/12 mb-4",
-    answer: 'text-right text-teal-700 font-bold text-md my-4 mx-6',
+    answer: 'text-right text-teal-700 font-bold text-md my-2 mx-6',
     dropdownMenu: 'px-4 py-2 rounded-lg mb-4 w-9/12 m-auto',
     totalText: 'text-xl font-bold text-center',
     totalAnswer: 'text-center text-teal-700 font-bold text-xl mt-2 mb-6',
@@ -24,15 +24,13 @@ export default function Home() {
   const [rate, setRate] = useState<number>(0);
   const [fundingHours, setFundingHours] = useState<number>(0);
 
-  // !! DONE - By wrapping your changes to setRate in a useEffect, you'll only update the rate if
-  // !! DONE - your childAge updates, rather than all the time 
   useEffect(() => {
     if (childAge <= 2) {
-      setRate(5.50);
+      setRate(5.5);
     } else if (childAge <= 4) {
-      setRate(5.00);
+      setRate(5);
     } else {
-      setRate(4.50);
+      setRate(4.5);
     }
   }, [childAge]);
 
@@ -48,17 +46,9 @@ export default function Home() {
     }
   }, [funding])
 
-  console.log(funding);
-  console.log(setFundingHours);
+  // console.log(funding);
+  // console.log(setFundingHours);
 
-  // You could figure out exactly which cantation you need to get the
-  // event typing correct in Typescript, or you can cut to the chase
-  // and only type out the areas your code cares about. Object destructuring
-  // is your friend here.
-
-  // Another option would be to create this handleAge function in line where
-  // you use it on line 64, and then Typescript would be able to infer it's
-  // type.
   const handleAge = (e: { target: { value: string } }) => {
     setChildAge(Number(e.target.value));
   };
@@ -78,11 +68,11 @@ export default function Home() {
   // 3) totalHours - funding 
 
   // STEP TWO
-  const totalCost = rate * hours;
+  // const totalCost = rate * hours;
 
   // STEP THREE
   const totalHours = hours - fundingHours;
-  const totalAmount = fundingHours * rate;
+  const totalAmount = totalHours * rate;
 
 
   return (
@@ -115,13 +105,13 @@ export default function Home() {
               onChange={handleHours}
               className={styles.input}
             />
-            <div className={styles.answer}>{hours} per week</div>
+            <div className={styles.answer}>{hours} hours per week</div>
           </div>
 
-          <div className={styles.questionContainer}>
-            <h2 className={styles.questionText}> Total Hours</h2>
+          {/* <div className={styles.questionContainer}>
+            <h2 className={styles.questionText}> Total Cost</h2>
             <div className={styles.totalAnswer}>£{totalCost}</div>
-          </div>
+          </div> */}
 
           <div className={styles.questionContainer}>
             <h2 className={styles.questionText}> Select funding options</h2>
@@ -132,7 +122,6 @@ export default function Home() {
               <option value="No funding">NONE</option>
             </select>
             <div className={styles.answer}>{funding}</div>
-            <div className={styles.answer}>{fundingHours}</div>
           </div>
 
           <div className={styles.questionContainer}>

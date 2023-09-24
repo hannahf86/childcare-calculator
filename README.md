@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Advice generator app solution
 
-## Getting Started
+This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### The Brief
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+My childminder once described to me the maths she has to do in order to produce a childcare invoice. I was suprised the council didn't have a calculator to make this easy for their employees, so I decided to make one.
 
-## Learn More
+Upon completion, users should be able to:
 
-To learn more about Next.js, take a look at the following resources:
+- Calculate their weekly invoice amount for childcare costs
+- Implement the correct funding rates where possible
+- Receive a monetary value for the week
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Screenshot
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![](./childcareCalc.png)
 
-## Deploy on Vercel
+### Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Solution URL: (https://github.com/hannahf86/childcare-calculator)
+- Live Site URL: (https://magenta-phoenix-cdc886.netlify.app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## My process
+
+My goal was to improve my skills with React Hooks and Typescript, so I did not spend a lot of time on the UI until the end.
+
+I first worked out the maths involved and then experimented with a few different methods to gather and display the information in the web app.
+
+I settled on the useEffect, useState and else if methods as I found that this was the cleanest way to deal with the numbers and options the user had.
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React Framework
+- [Tailwind](https://tailwindcss.com/) - CSS Framework
+
+### What I learned
+
+The goal of this project, from a developer's perspective, was to improve my use of common React Hooks and Typescript, which I now feel more confident in using.
+
+### Continued development
+
+Further development will include the following facilities and features...
+- User authentication
+- Ability to add multiple children
+- Ability to store family information using databases
+- The facility to print invoices
+
+## Author
+
+- Website - [Hannah Feehan](https://www.hannahfeehan.com)
+- Github - [hannahf86](https://github.com/hannahf86)
+
+## Acknowledgments
+
+Massive thank you to Joe Abell [joseph-abell](https://github.com/joseph-abell) for helping with the logic.
